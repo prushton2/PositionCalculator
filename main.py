@@ -39,3 +39,4 @@ print(distances[0]**2, distances[1]**2, distances[2]**2, distances[3]**2)
 
 #so now we solve in place of z in the first algorithm and place it into z on the second algorithm
 
+# (x-position[0][0])^2 + (y-position[0][1])^2 + (z-position[0][2])^2 = dist[0]**2;
