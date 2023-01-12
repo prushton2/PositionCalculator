@@ -13,15 +13,15 @@ position = [
 destination = [6,8,0]
 
 #givens (distances to each beacon) (no i dont care enough or want to learn about .map or whatever it is in python)
-distances = [
+dist = [
     math.sqrt((abs(position[0][0] - destination[0]))**2 + (abs(position[0][1] - destination[1]))**2 + (abs(position[0][2] - destination[2]))**2),
     math.sqrt((abs(position[1][0] - destination[0]))**2 + (abs(position[1][1] - destination[1]))**2 + (abs(position[1][2] - destination[2]))**2),
     math.sqrt((abs(position[2][0] - destination[0]))**2 + (abs(position[2][1] - destination[1]))**2 + (abs(position[2][2] - destination[2]))**2),
     math.sqrt((abs(position[3][0] - destination[0]))**2 + (abs(position[3][1] - destination[1]))**2 + (abs(position[3][2] - destination[2]))**2)
 ]
 
-print(distances)
-print(distances[0]**2, distances[1]**2, distances[2]**2, distances[3]**2)
+print(dist)
+print(dist[0]**2, dist[1]**2, dist[2]**2, dist[3]**2)
 
 #ok so these alogrithms can be generated based on the given stuff. These are used for my personal reference
 
@@ -39,4 +39,10 @@ print(distances[0]**2, distances[1]**2, distances[2]**2, distances[3]**2)
 
 #so now we solve in place of z in the first algorithm and place it into z on the second algorithm
 
+
 # (x-position[0][0])^2 + (y-position[0][1])^2 + (z-position[0][2])^2 = dist[0]**2;
+# turns into
+# (z-position[0][2])^2 = (dist[0]**2) / (x-position[0][0])^2 + (y-position[0][1])^2
+# this gets plugged into equation 2
+# (x-position[1][0])^2 + (y-position[1][1])^2 + ((dist[0]**2) / (x-position[0][0])^2 + (y-position[0][1])^2) = dist[1]**2;
+# now we have just x and y, so we solve for x
